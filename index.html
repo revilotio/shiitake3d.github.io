@@ -55,15 +55,22 @@
             color: #606060;
             /* This sets the font color to a dark grey */
         }
+
         model-viewer {
             width: 200px;
             height: 200px;
         }
+
         .paragraph-3.nerf_text.centered {
             text-align: center;
         }
+
         table {
-            margin:25px;
+            margin: 25px;
+        }
+        .header { 
+            width:70%;
+            margin-bottom: 0px;
         }
     </style>
 </head>
@@ -74,7 +81,7 @@
             <h1 class="nerf_title_v2">Shiitake3D</h1>
             <h1 class="nerf_subheader_v2"></h1>
             <h1 class="eccv_label">Neurips 2024</h1>
-            <img src="figures/shiitake_header.JPG" alt="Description of image" class="your_image_class">
+            <img src="figures/shiitake_header.JPG" alt="Description of image" class="header">
             <!-- <div class="nerf_authors_list_single w-row">
                     <div class="w-col w-col-2 w-col-small-4 w-col-tiny-6">
                         <a href="https://bmild.github.io/" target="_blank" class="nerf_authors_v2">
@@ -175,7 +182,8 @@
                     </a>
                 </div>
                 <div class="column-2 w-col w-col-4 w-col-small-4 w-col-tiny-4">
-                    <a href="https://drive.google.com/drive/folders/14Q7DT3ufyurTZ75F5OB55vMJ9H_JBqBQ?usp=sharing" target="_blank" class="link-block w-inline-block">
+                    <a href="https://drive.google.com/drive/folders/14Q7DT3ufyurTZ75F5OB55vMJ9H_JBqBQ?usp=sharing"
+                        target="_blank" class="link-block w-inline-block">
                         <img src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5e7136849ee3b0a0c6a95151_database.svg"
                             alt="paper" class="paper_img image-8_nerf nerf_db_icon" />
                     </a>
@@ -218,7 +226,22 @@
             </div> -->
             <div>
                 <h2 class="grey-heading_nerf">Abstract</h2>
-                <p class="paragraph-3 nerf_text">Here goes the abstract.</p>
+                <p class="paragraph-3 nerf_text">State-of-the-art Neural Radiance Fields (NeRF) demonstrate impressive
+                    results for real-world scene reconstruction and have fueled the creation of 3D models through the
+                    ease of capturing multi-view data. In recent years, this has opened the possibility of building 3D
+                    generative models directly from multi-view images.
+                    However, most of the existing image-based methods still either rely on synthetic datasets or operate
+                    in restricted categories, such as humans. This makes it difficult to evaluate their performance on
+                    real-world scenes, which might present unique challenges such as complex details or view-dependent
+                    effects. Unfortunately, existing real-world datasets often contain only a small number of entities
+                    in each class making them ill-suited for training generative models.
+                    We introduce a large-scale dataset of registered images, along with consistently lit close-range
+                    scans to close this gap and benchmark data-driven scene synthesis on the provided data.
+                    Counting more than 30,000 images of 427 entities of organic shapes, our dataset surpasses existing
+                    real-world benchmarks in terms of variations including local high-frequency details among shapes and
+                    appearances for the same class.
+                    We demonstrate our benchmark's unique capabilities by training various deep generative models on our
+                    data and showing the limitations of existing generative models.</p>
             </div>
 
             <div>
@@ -228,35 +251,35 @@
             <table class="table full-width">
                 <!-- is-hidden-mobile  -->
                 <tr>
-                  <td class="nopadding hidable""><model-viewer alt="mesh" src="meshes/GB2_193.glb" ar
-                    camera-controls></model-viewer></td>
-                  <td class="nopadding"><model-viewer alt="mesh" src="meshes/GB2_190.glb" ar 
-                    camera-controls></model-viewer></td>
-                    <td class="nopadding"><model-viewer alt="mesh" src="meshes/GB2_203.glb" ar 
-                    camera-controls ></model-viewer></td>
-                    <td class="nopadding"><model-viewer alt="mesh" src="meshes/GB2_204.glb" ar 
-                    camera-controls ></model-viewer></td>
-            </tr>
-            <tr class="paragraph-3">
-              <td >
-                <p class="paragraph-3 nerf_text centered">GB2_193</p>
-              </td>
-              <td>
-                <p class="paragraph-3 nerf_text centered">GB2_190</p>
-              </td>
-              <td>
-                <p class="paragraph-3 nerf_text centered">GB2_203</p>
-              </td>
-              <td>
-                <p class="paragraph-3 nerf_text centered">GB2_204</p>
-              </td>
-            </tr>
+                    <td class="nopadding hidable""><model-viewer alt=" mesh" src="meshes/GB2_193.glb" ar
+                        camera-controls></model-viewer></td>
+                    <td class="nopadding"><model-viewer alt="mesh" src="meshes/GB2_190.glb" ar
+                            camera-controls></model-viewer></td>
+                    <td class="nopadding"><model-viewer alt="mesh" src="meshes/GB2_203.glb" ar
+                            camera-controls></model-viewer></td>
+                    <td class="nopadding"><model-viewer alt="mesh" src="meshes/GB2_204.glb" ar
+                            camera-controls></model-viewer></td>
+                </tr>
+                <tr class="paragraph-3">
+                    <td>
+                        <p class="paragraph-3 nerf_text centered">GB2_193</p>
+                    </td>
+                    <td>
+                        <p class="paragraph-3 nerf_text centered">GB2_190</p>
+                    </td>
+                    <td>
+                        <p class="paragraph-3 nerf_text centered">GB2_203</p>
+                    </td>
+                    <td>
+                        <p class="paragraph-3 nerf_text centered">GB2_204</p>
+                    </td>
+                </tr>
             </table>
 
 
             <div>
                 <h2 class="grey-heading_nerf">License</h2>
-                <p class="paragraph-3 nerf_text">MIT License.<br><br> 
+                <p class="paragraph-3 nerf_text">MIT License.<br><br>
                     Permission is hereby granted, free of charge, to any person obtaining a copy
                     of this software and associated documentation files (the "Software"), to deal
                     in the Software without restriction, including without limitation the rights
@@ -273,7 +296,8 @@
                     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
                     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
                     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-                    SOFTWARE.</p>
+                    SOFTWARE.
+                </p>
             </div>
             <footer style="text-align: center; margin-top: 20px;">
                 <p>The website template was borrowed from <a href="https://www.matthewtancik.com/nerf" target="_blank"
