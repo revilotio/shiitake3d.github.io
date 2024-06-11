@@ -44,36 +44,7 @@
             'anonymize_ip': false
         });
     </script>
-    <style>
-        .wf-loading * {
-            opacity: 0;
-        }
-
-        .grey-heading_nerf,
-        .paragraph-3.nerf_text,
-        p {
-            color: #606060;
-            /* This sets the font color to a dark grey */
-        }
-
-        model-viewer {
-            width: 100%;
-            height: 200px;
-        }
-
-        .paragraph-3.nerf_text.centered {
-            text-align: center;
-        }
-
-        table {
-            margin: 25px;
-            width: 100%;
-        }
-        .header { 
-            width:70%;
-            margin-bottom: 0px;
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
@@ -227,10 +198,11 @@
             </div> -->
             <div>
                 <h2 class="grey-heading_nerf">Abstract</h2>
-                <p class="paragraph-3 nerf_text">State-of-the-art Neural Radiance Fields (NeRF) demonstrate impressive
-                    results for real-world scene reconstruction and have fueled the creation of 3D models through the
-                    ease of capturing multi-view data. In recent years, this has opened the possibility of building 3D
-                    generative models directly from multi-view images.
+                <p class="paragraph-3 nerf_text">
+                    State-of-the-art Neural Radiance Fields (NeRF) demonstrate impressive results for real-world scene
+                    reconstruction and have fueled the creation of 3D models through the ease of capturing multi-view
+                    data. In recent years, this has opened the possibility of building 3D generative models
+                    directly from the multi-view images.
                     However, most of the existing image-based methods still either rely on synthetic datasets or operate
                     in restricted categories, such as humans. This makes it difficult to evaluate their performance on
                     real-world scenes, which might present unique challenges such as complex details or view-dependent
@@ -238,45 +210,83 @@
                     in each class making them ill-suited for training generative models.
                     We introduce a large-scale dataset of registered images, along with consistently lit close-range
                     scans to close this gap and benchmark data-driven scene synthesis on the provided data.
-                    Counting more than 30,000 images of 427 entities of organic shapes, our dataset surpasses existing
+                    Counting more than 21,000 images of 427 entities of organic shapes, our dataset surpasses existing
                     real-world benchmarks in terms of variations including local high-frequency details among shapes and
                     appearances for the same class.
                     We demonstrate our benchmark's unique capabilities by training various deep generative models on our
-                    data and showing the limitations of existing generative models.</p>
+                    data and showing the limitations of existing approaches. </p>
             </div>
 
             <div>
-                <h2 class="grey-heading_nerf">3D Viewer</h2>
+                <h2 class="grey-heading_nerf">Dataset</h2>
+            </div>
+            <div class="padded full-width">
+                <table class="table full-width">
+                    <!-- is-hidden-mobile  -->
+                    <tr>
+                        <td class="nopadding"><model-viewer alt=" mesh" src="meshes/GB2_193.glb" ar camera-controls
+                                poster="meshes/GB2_193.webp"></model-viewer></td>
+                        <td class="nopadding"><model-viewer alt="mesh" src="meshes/GB2_190.glb" ar camera-controls
+                                poster="meshes/GB2_190.webp"></model-viewer></td>
+                        <td class="nopadding"><model-viewer alt="mesh" src="meshes/GB2_203.glb" ar camera-controls
+                                poster="meshes/GB2_203.webp"></model-viewer></td>
+                        <td class="nopadding"><model-viewer alt="mesh" src="meshes/GB2_204.glb" ar camera-controls
+                                poster="meshes/GB2_204.webp"></model-viewer></td>
+                    </tr>
+                    <tr class="paragraph-3">
+                        <td>
+                            <p class="paragraph-3 nerf_text centered">GB2_193</p>
+                        </td>
+                        <td>
+                            <p class="paragraph-3 nerf_text centered">GB2_190</p>
+                        </td>
+                        <td>
+                            <p class="paragraph-3 nerf_text centered">GB2_203</p>
+                        </td>
+                        <td>
+                            <p class="paragraph-3 nerf_text centered">GB2_204</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <p class="paragraph-3 nerf_text">Shiitake3D contains over 21,000 views of 427 entities of organic shapes,
+                as well as curated 3D reconstructions from these images. It consists of different species of mushrooms
+                with rich geometric and appearance details, making them an ideal and challenging test bed for existing
+                and future data-driven scene synthesis.
+                We provide two separate scenarios: synthetic views generated from our reconstructed 3D shapes, and
+                real-life multi-view images.</p>
+
+            <p class="paragraph-3 nerf_text">Please see ReadMe for detailed download instructions.</p>
+            <div>
+                <h2 class="grey-heading_nerf">Capture Process</h2>
+            </div>
+            <div class="padded full-width">
+                <table class="table full-width">
+                    <tr class="paragraph-3">
+                        <td>
+                            <img src="figures/cam-1_1.jpg" alt="Description of image">
+                        </td>
+                        <td>
+                            <img src="figures/cam-2_2.jpg" alt="Description of image">
+                        </td>
+                        <td>
+                            <img src="figures/cam-3_13.jpg" alt="Description of image">
+                        </td>
+                        <td>
+                            <img src="figures/cam-4_29.jpg" alt="Description of image">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <p class="paragraph-3 nerf_text">Models were captured on a rotating table using 4 cameras at different
+                angles, allowing for high-fidelity reconstructions.</p>
+
+            <div>
+                <h2 class="grey-heading_nerf">Benchmarks</h2>
             </div>
 
-            <table class="table full-width">
-                <!-- is-hidden-mobile  -->
-                <tr>
-                    <td class="nopadding hidable""><model-viewer alt=" mesh" src="meshes/GB2_193.glb" ar
-                        camera-controls poster="meshes/GB2_193.webp"></model-viewer></td>
-                    <td class="nopadding"><model-viewer alt="mesh" src="meshes/GB2_190.glb" ar
-                            camera-controls poster="meshes/GB2_190.webp"></model-viewer></td>
-                    <td class="nopadding"><model-viewer alt="mesh" src="meshes/GB2_203.glb" ar
-                            camera-controls poster="meshes/GB2_203.webp"></model-viewer></td>
-                    <td class="nopadding"><model-viewer alt="mesh" src="meshes/GB2_204.glb" ar
-                            camera-controls poster="meshes/GB2_204.webp"></model-viewer></td>
-                </tr>
-                <tr class="paragraph-3">
-                    <td>
-                        <p class="paragraph-3 nerf_text centered">GB2_193</p>
-                    </td>
-                    <td>
-                        <p class="paragraph-3 nerf_text centered">GB2_190</p>
-                    </td>
-                    <td>
-                        <p class="paragraph-3 nerf_text centered">GB2_203</p>
-                    </td>
-                    <td>
-                        <p class="paragraph-3 nerf_text centered">GB2_204</p>
-                    </td>
-                </tr>
-            </table>
-
+            <p class="paragraph-3 nerf_text">Please refer to our paper for detailed results on synthetic and natural
+                datasets.</p>
 
             <div>
                 <h2 class="grey-heading_nerf">License</h2>
